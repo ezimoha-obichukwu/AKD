@@ -6,8 +6,6 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def home_page(request):
-    username = User.objects.all()
-    messages.success(request, f"Welcome {username}")
     return render(request, "a.html")
 
 def registration_page(request):
@@ -54,6 +52,6 @@ def login_page(request):
 
 
 
-def frontend_logout(request):
+def logout(request):
     auth.logout(request)
     return redirect("/")
